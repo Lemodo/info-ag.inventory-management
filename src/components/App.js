@@ -7,6 +7,7 @@ import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Profile from "./Profile"
 import PrivateRoute from "./PrivateRoute"
+import UpdateProfile from "./UpdateProfile"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/update-profile" element={<UpdateProfile />} />
           </Route>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />

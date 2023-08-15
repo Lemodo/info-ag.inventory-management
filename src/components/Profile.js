@@ -4,34 +4,21 @@ import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Profile() {
-    const [error, setError] = useState();
+    const [error, setError] = useState("");
     const { currentUser, logout } = useAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function handleLogout() {
-        setError("")
+        setError("");
 
         try {
-            await logout()
-            navigate("/login")
-        } catch {
-            if (error.code) {
-                setError(error.message);
-            } else {
-                // Handle other errors (e.g., network issues)
-                setError('An error occurred during logout. Please try again.');
-            }
+            await logout();
+            navigate("/login");
+        } catch (error) {
+            // Handle any errors during logout
+            setError('An error occurred during logout. Please try again.');
         }
-
-        if (error.code) {
-            setError(error.message);
-            } else {
-                // Handle other errors (e.g., network issues)
-                setError('An error occurred during logout. Please try again.');
-            }
-            
     }
-
 
     return (
         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
@@ -40,7 +27,16 @@ export default function Profile() {
                     <Card.Body>
                         <h2 className='text-center mb-4'>My Profile</h2>
                         {error && <Alert variant='danger'>{error}</Alert>}
-                        <strong>Email: </strong>{currentUser.email}
+                        {currentUser.displayName && (
+                            <p>
+                                <strong>Display Name: </strong>
+                                {currentUser.displayName}
+                            </p>
+                        )}
+                        <p>
+                            <strong>Email: </strong>
+                            {currentUser.email}
+                        </p>
                         <Link to="/update-profile" className='btn btn-secondary w-100 mt-3'>Update Profile</Link>
                     </Card.Body>
                 </Card>
@@ -49,5 +45,5 @@ export default function Profile() {
                 </div>
             </div>
         </Container>
-    )
+    );
 }
