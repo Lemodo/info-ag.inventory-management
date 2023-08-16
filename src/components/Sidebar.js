@@ -21,9 +21,16 @@ function Sidebar() {
     }
   }
 
-
   function profileLink() {
     navigate('/profile');
+  }
+
+  function dashboardLink() {
+    navigate('/');
+  }
+
+  function databaseLink() {
+    navigate('/inventory');
   }
 
   return (
@@ -33,8 +40,8 @@ function Sidebar() {
         <MenuItem disabled style={{ color: 'black' }}>
           <h2 className='mt-2'>Informatik-AG</h2>
         </MenuItem>
-        <MenuItem> Dashboard </MenuItem>
-        <MenuItem> Inventory </MenuItem>
+        <MenuItem onClick={dashboardLink}> Dashboard </MenuItem>
+        <MenuItem onClick={databaseLink}> Inventory </MenuItem>
         <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0' }}>
           <SubMenu
             label={
