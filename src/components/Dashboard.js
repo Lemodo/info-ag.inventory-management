@@ -22,6 +22,17 @@ export default function Dashboard() {
                 </div>
               </Container>
             </Col>
+            <Col>
+              <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+                <div className="w-100" style={{ overflow: "hidden" }}>
+                  <Card>
+                    <Card.Body>
+                      Database records in total
+                    </Card.Body>
+                  </Card>
+                </div>
+              </Container>
+            </Col>
           </Row>
         </Container>
       </main>
