@@ -8,7 +8,7 @@ export default function Database() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://backend.leoboedeker.com/")
+    axios.get("https://backend.leoboedeker.de/")
       .then(res => {
         setData(res.data);
         console.log("loaded" + res.data)
