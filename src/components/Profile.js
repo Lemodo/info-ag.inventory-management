@@ -3,6 +3,7 @@ import { Button, Card, Alert, Container } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 export default function Profile() {
     const [error, setError] = useState("");
     const { currentUser, logout } = useAuth();
@@ -18,6 +19,10 @@ export default function Profile() {
             // Handle any errors during logout
             setError('An error occurred during logout. Please try again.');
         }
+    }
+
+    function dashboardLink() {
+        navigate("/")
     }
 
     return (
@@ -41,6 +46,7 @@ export default function Profile() {
                     </Card.Body>
                 </Card>
                 <div className='w-100 text-center mt-2'>
+                    <Button variant='link' onClick={dashboardLink}>Back</Button>
                     <Button variant='link' onClick={handleLogout}>Log Out</Button>
                 </div>
             </div>
