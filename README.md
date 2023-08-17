@@ -21,7 +21,7 @@
   </p>
 </p>
 
-
+> This is the frontend system for our inventory management system. The backend express server can be found [here](https://github.com/Lemodo/info-ag.backend)
 
 ## Table Of Contents
 
