@@ -13,7 +13,7 @@
     <a href="https://github.com/Lemodo/info-ag.inventory-management"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/Lemodo/info-ag.inventory-management">View Demo</a>
+    <a href="https://inventar.info-ag.leoboedeker.de">View Demo</a>
     .
     <a href="https://github.com/Lemodo/info-ag.inventory-management/issues">Report Bug</a>
     .
