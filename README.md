@@ -36,7 +36,6 @@
 
 * [React](https://react.dev/)
 * [Bootstrap](https://react-bootstrap.netlify.app/)
-* [Tanstack React Table](https://tanstack.com/table/v8)
 * [Firebase Authentication](https://firebase.google.com/)
 
 ## Getting Started
